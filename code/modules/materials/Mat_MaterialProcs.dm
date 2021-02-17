@@ -387,7 +387,7 @@ triggerOnEntered(var/atom/owner, var/atom/entering)
 
 		if(agent_b && temp > 500 && air.toxins > MINIMUM_REACT_QUANTITY )
 			var/datum/gas/oxygen_agent_b/trace_gas = payload.get_or_add_trace_gas_by_type(/datum/gas/oxygen_agent_b)
-			payload.temperature = T0C // Greatly reduce temperature to simulate an endothermic reaction
+			payload.temperature = sqrt(T20C*(air.temperature/4)) // Greatly reduce temperature to simulate an endothermic reaction
 
 			// Itr 1: 0.125 Agent B, 10 Oxy
 			// Itr 2: 0.0605 Agent B
